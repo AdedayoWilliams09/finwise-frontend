@@ -1,0 +1,11 @@
+/* FILE: frontend/src/index.css */
+/* PURPOSE: Import Tailwind CSS v4 */
+
+@import 'tailwindcss';
+
+/* Optional: Add custom base styles */
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
