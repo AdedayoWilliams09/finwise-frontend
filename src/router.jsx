@@ -19,6 +19,7 @@ import Loader from './components/common/Loader';
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'));
 
+
 // For now, create placeholder components for other routes
 const Features = lazy(() => import('./pages/Features'));
 const Pricing = lazy(() => import('./pages/Pricing'));

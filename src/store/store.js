@@ -3,22 +3,12 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import apiReducer from './apiSlice';
-
-/**
- * 🧒 Child Explanation:
- * This creates the whiteboard (store) where we keep our information.
- * We tell it: "We have one section called 'api' for backend connection info."
- * 
- * 👨‍💻 Technical Explanation:
- * configureStore sets up Redux with good defaults:
- * - DevTools enabled in development
- * - Thunk middleware included by default
- * - Immutability checks in development
- */
+import aboutReducer from './aboutSlice';
 
 export const store = configureStore({
   reducer: {
-    api: apiReducer,  // Only one slice in foundation phase
+    api: apiReducer,
+    about: aboutReducer,
   },
-  devTools: process.env.NODE_ENV !== 'production', // Enable Redux DevTools in dev
+  devTools: process.env.NODE_ENV !== 'production',
 });

@@ -132,7 +132,7 @@ To verify Tailwind is working, the main heading should be:
 - Timeout: 10 seconds
 
 
-## Phase 2: Homepage (Public Landing Page)
+## Homepage (Public Landing Page)
 
 ### New Page
 - **Homepage** (`/`) - Complete landing page with all sections
@@ -177,3 +177,30 @@ npm install react-hot-toast
 - /login - Login page (placeholder)
 
 - /signup - Signup page (placeholder)
+
+
+
+##  About Page
+
+### New Page
+- **About Page** (`/about`) - Company information page with team and stats
+
+### New Components
+- `components/about/HeroSection.jsx` - About page hero with mission
+- `components/about/StorySection.jsx` - Company origin story timeline
+- `components/about/ValuesSection.jsx` - Core values grid (4 values)
+- `components/about/TeamSection.jsx` - Team members grid (dynamic)
+- `components/about/StatsSection.jsx` - Statistics counters (dynamic)
+
+### New Redux Slice
+- `store/aboutSlice.js` - About page state management
+  - `fetchTeamMembers()` - Fetches team members from API
+  - `fetchStats()` - Fetches system statistics
+  - State: `teamMembers`, `stats`, `isLoading`, `error`
+
+### New Environment Variables
+- None added in this phase
+
+### New API Endpoints Used
+- `GET /api/public/team` - Fetch team members
+- `GET /api/public/stats` - Fetch system statistics

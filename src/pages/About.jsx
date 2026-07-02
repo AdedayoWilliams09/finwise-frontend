@@ -1,15 +1,60 @@
 // FILE: frontend/src/pages/About.jsx
-import React from 'react';
+// PURPOSE: About page with all sections
 
-export default function About() {
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
+import HeroSection from '../components/about/HeroSection';
+import StorySection from '../components/about/StorySection';
+import ValuesSection from '../components/about/ValuesSection';
+import TeamSection from '../components/about/TeamSection';
+import StatsSection from '../components/about/StatsSection';
+import CTASection from '../components/home/CTASection';
+
+/**
+ *  Child Explanation:
+ * This is the About page - it tells visitors who we are and what we do.
+ * It has sections about our mission, story, values, team, and stats.
+ * 
+ *  Technical Explanation:
+ * About page component that assembles all sections.
+ * Uses Helmet for SEO meta tags.
+ * Reuses CTASection from homepage for consistency.
+ */
+
+const About = () => {
   return (
-    <div className="pt-24 min-h-screen flex items-center justify-center bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
-      <div className="max-w-2xl text-center p-8 animate-slide-up">
-        <h1 className="text-4xl font-extrabold text-primary mb-4">About Finwise</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-          We are on a mission to democratize financial literacy and wealth management tools, making smart budgeting accessible to everyone everywhere.
-        </p>
+    <>
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>About Finwise - Our Mission & Team</title>
+        <meta 
+          name="description" 
+          content="Learn about Finwise - our mission to make financial tracking simple and accessible for everyone. Meet our team and see our impact." 
+        />
+        <meta property="og:title" content="About Finwise - Our Mission & Team" />
+        <meta property="og:description" content="Learn about Finwise and our mission to help everyone achieve financial freedom." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        
+        <main className="flex-1">
+          <HeroSection />
+          <StorySection />
+          <ValuesSection />
+          <StatsSection />
+          <TeamSection />
+          <CTASection />
+        </main>
+
+        <Footer />
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default About;
