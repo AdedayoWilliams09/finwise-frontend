@@ -204,3 +204,36 @@ npm install react-hot-toast
 ### New API Endpoints Used
 - `GET /api/public/team` - Fetch team members
 - `GET /api/public/stats` - Fetch system statistics
+
+
+
+##  Pricing Page
+
+### New Page
+- **Pricing Page** (`/pricing`) - Pricing plans and feature comparison
+
+### New Components
+- `components/pricing/PricingCard.jsx` - Individual plan card
+- `components/pricing/PricingTable.jsx` - All plans grid
+- `components/pricing/FeatureComparison.jsx` - Feature comparison table
+
+### New Redux Slice
+- `store/pricingSlice.js` - Pricing state management
+  - `fetchPricingPlans()` - Fetches plans from API
+  - `initializePayment()` - Initializes Paystack payment
+  - `selectPlan()` - Selects a plan for subscription
+  - State: `plans`, `selectedPlan`, `payment`, `isLoading`, `error`
+
+### New Environment Variables
+- `VITE_PAYSTACK_PUBLIC_KEY` - Paystack public key (for payment UI)
+
+### New Dependencies
+
+npm install react-paystack
+
+### New API Endpoints Used
+- GET /api/public/pricing - Fetch pricing plans
+
+- POST /api/payment/initialize - Initialize payment
+
+- GET /api/payment/verify/:reference - Verify payment
